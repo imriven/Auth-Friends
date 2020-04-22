@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom"
 import axios from "axios"
-
-
+import { ContainerDiv, AwesomeLabel, AwesomeInput } from "../styles/index"
 
 
 const Login = () => {
@@ -32,12 +31,12 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <ContainerDiv>
              <form onSubmit={handleLogin}>
         
-          <label htmlFor="username">
+          <AwesomeLabel htmlFor="username">
            User Name: 
-            <input
+            <AwesomeInput
               id="username"
               type="text"
               name="username"
@@ -45,23 +44,24 @@ const Login = () => {
               onChange={handleChange}
               placeholder="Enter Name"
             />
-          </label>
-          <label htmlFor="password">
+          </AwesomeLabel>
+          <br />
+                    <AwesomeLabel htmlFor="password">
             Password: 
-            <input
+            <AwesomeInput
               id="password"
-              type="text"
+              type="password"
               name="password"
               value={formState.password}
               onChange={handleChange}
               placeholder="Enter Password"
 
             />
-          </label>
+          </AwesomeLabel>
         
           <button onClick={handleLogin}>Login</button>
           </form>
-        </div>
+        </ContainerDiv>
     )
 
 }
